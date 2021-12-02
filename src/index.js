@@ -18,7 +18,7 @@ function onSearch(e) {
   e.preventDefault();
   const input = e.target.value.trim();
 
-  if (!input) return (countryList.innerHTML = '');
+  if (!input) return (countryList.innerHTML = ''), (countryInfoRef.innerHTML = '');
   API.fetchCountries(input).then(renderCountryList).catch(onFetchError);
 }
 
